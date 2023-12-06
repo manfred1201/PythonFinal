@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
+import pickle
 
 s = pd.read_csv("social_media_usage.csv")
 
@@ -28,10 +29,9 @@ ss.dropna(inplace=True)
 y = ss['sm_li']
 X = ss.drop('sm_li', axis=1)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
-
-X_train.shape, X_test.shape, y_train.shape, y_test.shape
-
 logi_model = LogisticRegression(class_weight='balanced')
 
-logi_model.fit(X_train, y_train)
+logi_model.fit(X, y)
+
+with open('model.pkl', 'wb') as file:
+    pickle.dump(logi_model, file)
