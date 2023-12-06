@@ -53,8 +53,3 @@ if st.button("Predict!"):
     p = model.predict_proba(model_inputs)[0][1]
     st.write("The prediction of whether the person is a LinkedIn user: ", "Yes" if prediction[0] == 1 else "No")
     st.write("The probability of using LinkedIn is:", p)
-
-# 运行 Streamlit 应用
-# 这部分代码只有当此脚本作为主程序运行时才会执行
-if __name__ == "__main__":
-    st.run()
