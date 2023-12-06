@@ -30,8 +30,8 @@ education_options = {
 }
 
 parent = st.selectbox("Are you a parent of a child under 18 living in your home?", options=["Yes", "No"])
-income = st.selectbox("Select your household income:", list(income_options).keys())
-education = st.selectbox("Select your highest level of education:", list(education_options).keys())
+income = st.selectbox("Select your household income:", list(income_options.keys()))
+education = st.selectbox("Select your highest level of education:", list(education_options.keys()))
 married = st.selectbox("Are you married?", options=["Yes", "No"])
 female = st.selectbox("Are you a female?", options=["Yes", "No"])
 age = st.number_input("Please enter your age:")
